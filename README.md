@@ -18,5 +18,9 @@ server {
     proxy_set_header X-Real-IP $remote_addr;
 }
 ```
-We can also add weights to the servers if a server is powerful than others. We can see the logs of a container to check if it has been requested or not.
-  
+We can also add weights to the servers if a server is powerful than others.
+I used the following bash script to send requests to the rails server for every 50ms.
+```bash
+while sleep 0.05; do curl http://cloudflare; done
+```
+ We can see the logs of a container to check if it has been requested or not.
